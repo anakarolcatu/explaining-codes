@@ -30,3 +30,21 @@ sortByAge(users);
 console.log(users[0].name); // John
 console.log(users[1].name); // Mary
 console.log(users[2].name); // Pete
+
+const people = [
+    'Bernhard, Sandra', 'Bethea, Erin', 'Becker, Carl', 'Bentsen, Lloyd', 'Beckett, Samuel', 'Blake, William', 'Berger, Ric', 'Beddoes, Mick', 'Beethoven, Ludwig',
+    'Belloc, Hilaire', 'Begin, Menachem', 'Bellow, Saul', 'Benchley, Robert', 'Blair, Robert', 'Benenson, Peter', 'Benjamin, Walter', 'Berlin, Irving',
+    'Benn, Tony', 'Benson, Leana', 'Bent, Silas', 'Berle, Milton', 'Berry, Halle', 'Biko, Steve', 'Beck, Glenn', 'Bergman, Ingmar', 'Black, Elk', 'Berio, Luciano',
+    'Berne, Eric', 'Berra, Yogi', 'Berry, Wendell', 'Bevan, Aneurin', 'Ben-Gurion, David', 'Bevel, Ken', 'Biden, Joseph', 'Bennington, Chester', 'Bierce, Ambrose',
+    'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
+  ];
+
+  // Sort the people alphabetically by last name
+  //in this case, we first need to split the array to use the last name, otherwise, the full name will come up
+  const lastName = people.sort((lastOne, nextOne) => {
+    //we use the , and space to separate the two names and identify the first and last name. using the [] we are already creating a variable for each of the two names that each person has and storing in the variable
+    const [aLast, aFirst] = lastOne.split(', ');
+    const [bLast, bFirst] = nextOne.split(', ');
+    return aLast > bLast ? 1 : -1;
+  });
+  console.log(lastName);
