@@ -34,6 +34,6 @@ This repo will be a base for my code studies.
 - [Create an object from an array](/javascript/methods/grouping/reduce.js) 
 - [Convert an object into an array](/javascript/methods/map.js)
 - [Find and delete something](/javascript/methods/find-index.js)
-- [Sum how many times a item has appeared](/javascript/methods/grouping/reduce.js)
+- [Sum how many times an item has appeared](/javascript/methods/grouping/reduce.js)
 
 </details>
