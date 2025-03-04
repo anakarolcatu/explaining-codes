@@ -1,3 +1,6 @@
+// --- GENERAL SORTING---
+
+// -- Create an object from an array --
 //create a function that creates an object from an array, using id as the key, and array itens as values
 
 function groupById(arr) {
@@ -36,3 +39,37 @@ const inventors = [
   //in this case, we need to calculate how many years each one of them lived and then sum up. So we have the total, that is the accumulator and each person. We take every person death and birth date and add the value to the total. To make it work, we need to add the initial value as 0 in the end of the function.
   const livedYears = inventors.reduce((total, inventor) => total + (inventor.passed - inventor.year), 0);
   console.log(livedYears);
+
+  // -- GET AVERAGE VALUE FROM AN ARRAY --
+
+  //write a function that gets an array of objects with property age and returns the average age
+
+let john = {name: 'John', age: 25};
+let mary = {name: 'Mary', age: 30};
+let peter = {name: 'Peter', age: 29};
+
+let arr = [john, mary, peter];
+
+function getAverageAge(users) {
+    //the reduce method will sum all the items in each iteration through the array, in this case we are summing the age of each user
+    //to make the average we divide the sum by the length of the array
+    return users.reduce((prev, user) => prev + user.age, 0) / users.length;
+};
+
+console.log(getAverageAge(arr)); // 28
+
+// Sum up the instances of each of these
+const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+//we will use reduce to iterate over the array
+const transportation = data.reduce(function(obj, item) {
+  //then, we need to check if the object already have that item, if not, it will create it if the 0 count
+  if (!obj[item]) {
+    obj[item] = 0;
+  }
+  //and then it will add 1 to the counter
+  obj[item]++;
+  return obj;
+  //we need to put the items in a object, we could hardcode every item of the array, but if you dont know each one of them, you can start with an empty object and the if loop will verify and create each on of them that needs to be created
+}, {});
+
+console.log(transportation);
